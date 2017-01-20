@@ -31,8 +31,19 @@ abstract class finit implements fInterface
     {
         if ($this->getIsOpen()) {
             $length = (inArrKey($params, 'length') && isInt($params['length'])) ? $params['length'] : filesize($this->filePath);
-            $data = fread($this->file, $length);
-            return $data;
+            if($length>0){
+                $data = fread($this->file, $length);
+                return $data;
+            }
+        }
+        return false;
+    }
+
+    public function fwrite($value, array $params = [])
+    {
+        if ($this->getIsOpen() && isStr($value)) {
+            fwrite($this->file, $value);
+            return true;
         }
         return false;
     }

@@ -1,0 +1,148 @@
+/*html*/
+html {
+    padding: 0;
+    margin: 0;
+    background-color: #fff;
+}
+
+/*body*/
+#page {
+    padding: 0;
+    margin: 0 auto;
+    width: 800px;
+
+}
+
+/*form*/
+#second-form,
+#main-form {
+    width: 400px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+#second-form label,
+#main-form label {
+    color: green;
+}
+
+#second-form input:not([type="submit"]),
+#main-form input:not([type="submit"]) {
+    padding: 5px;
+}
+
+#second-form input,
+#second-form select,
+#main-form input,
+#main-form select {
+    display: block;
+    margin: 10px auto 5px;
+    width: 100%;
+    border-radius: 2px;
+    border: 1px solid #777;
+}
+
+#main-form select[multiple] {
+    height: 125px;
+    padding: 2px;
+}
+
+#second-form select:not([multiple]),
+#main-form select:not([multiple]) {
+    padding: 4px 10px;
+}
+
+#second-form input[type='submit'],
+#main-form input[type='submit'] {
+    color: #999;
+    cursor: pointer;
+    padding: 10px;
+    font-weight: bold;
+    box-shadow: inset 0 0 10px 2px #aaa;
+    background-color: #ccc;
+    font-size: 15px;
+}
+
+#second-form input[type='submit']:hover,
+#main-form input[type='submit']:hover {
+    color: #333;
+    box-shadow: inset 0 0 10px 2px #888;
+    background-color: #aaa;
+}
+
+/*link*/
+.link {
+    text-decoration: none;
+    color: blue;
+    font-size: 15px;
+}
+
+/*table*/
+.table {
+    width: 100%;
+    display: block;
+    border: 2px dashed #999;
+    margin: 5px 0;
+}
+
+.table:after,
+.table .r:after {
+    clear: both;
+    content: '.';
+    visibility: hidden;
+    display: block;
+    height: 0;
+    width: 0;
+}
+
+.table .r .c.title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.table .r,
+.table .r .c {
+    box-sizing: border-box;
+}
+
+.table .r {
+    width: 100%;
+    border-bottom: 1px dashed #999;
+}
+.table .r:nth-of-type(2n+3){
+    background-color: #eee;
+}
+.table .r:last-of-type {
+    border-bottom: none;
+}
+
+.table .r .c {
+    padding: 10px;
+    float: left;
+    text-align: center;
+}
+
+.table .r .c-1 {
+    width: 100%;
+}
+
+.table .r .c-2 {
+    width: 50%;
+}
+
+.table .r .c-3 {
+    width: 33.33%;
+}
+
+.table .r .c-4 {
+    width: 25%;
+}
+
+.table .r .c-5 {
+    width: 20%;
+}
+
+.table .r .c-6 {
+    width: 16.66%;
+}

@@ -5,8 +5,14 @@ final class ffile extends finit
     /**
      * @link http://php.net/manual/ru/function.file.php
      * */
-    public function file(){
-        if($this->isFileExists()){
+    function __construct($newFilePath, array $params = [])
+    {
+        parent::__construct($newFilePath, count($params) > 0, $params);
+    }
+
+    public function file()
+    {
+        if ($this->isFileExists()) {
             $data = file($this->getFilePath());
             return $data;
         }
