@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $valid = true;
         foreach ($data as $d) {
-            if ($d == null) {
+            if ($d == null || empty($d)) {
                 $valid = false;
                 break;
             }
@@ -155,6 +155,7 @@ $allFilms = $fJsonFile->getData();
 
 <?php
 $allFilmsCopy = $allFilms;
+$budget = [];
 foreach ($allFilmsCopy as $key => $row) {
     $budget[$key] = $row['budget'];
 }
@@ -217,23 +218,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $country = $_POST['country'];
         $string = $_POST['string'];
         $f = true;
+
+        $Letters = cyrillicStringToArray($string);
+
         foreach ($allFilms as $film) {
             if (inArr($film['country'], $country)) {
                 $sumBudget += $film['budget'];
                 $avgBudget++;
             }
-//            mb_strpos($film['name'], mb_substr($string, $i, 1)) !== false
-//            $p = false;
-            for ($i = 0; $i < strlen($string) - 1; $i++) {
-//                if ($p) break;
-                for ($j = 0; $j < strlen($film['name']) - 1; $j++) {
-                    var_dump(($string[$i]),($film['name'][$j]));
-                    echo '<br>';
-                    if ($string[$i] == $film['name'][$j]) {
-                        array_push($allFilmsCopy, $film);
-//                        $p = true;
-//                        break;
-                    }
+
+            $nameLetters = cyrillicStringToArray($film['name']);
+
+            foreach ($Letters as $l) {
+                if (inArr($nameLetters, $l)) {
+                    array_push($allFilmsCopy, $film);
+                    break;
                 }
             }
         }
