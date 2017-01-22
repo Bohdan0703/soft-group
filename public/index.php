@@ -64,9 +64,9 @@ $allFilms = $fJsonFile->getData();
 </head>
 <body id="page">
 <p>
-    Рекомендую<a target="_blank" class="link"
+    {l:m:recommend}<a target="_blank" class="link"
                  href="https://chrome.google.com/webstore/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh?hl=ru">
-        JSON Viewer
+        {l:m:JSONViewerName}
     </a>
 </p>
 
@@ -126,7 +126,7 @@ $allFilms = $fJsonFile->getData();
 
 <p><a href="./files/txt/year-list.txt" class="link" target="_blank">./files/txt/year-list.txt</a></p>
 
-<p><a href="files/txt/films.json" class="link" target="_blank">./files/txt/films.json</a></p>
+<p><a href="./files/txt/films.json" class="link" target="_blank">./files/txt/films.json</a></p>
 
 <div class="table">
     <div class="r">
