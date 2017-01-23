@@ -17,7 +17,7 @@ abstract class finit implements fInterface
 
     public function fopen(array $params = [])
     {
-        if (inArrKey($params, 'mode') && isStr($params['mode'])) {
+        if (inArrKey('mode', $params) && isStr($params['mode'])) {
             if ($this->isFileExists()) {
                 $this->file = fopen($this->filePath, $params['mode']);
                 $this->setIsOpen(true);
@@ -30,8 +30,8 @@ abstract class finit implements fInterface
     public function fread(array $params = [])
     {
         if ($this->getIsOpen()) {
-            $length = (inArrKey($params, 'length') && isInt($params['length'])) ? $params['length'] : filesize($this->filePath);
-            if($length>0){
+            $length = (inArrKey('length', $params) && isInt($params['length'])) ? $params['length'] : filesize($this->filePath);
+            if ($length > 0) {
                 $data = fread($this->file, $length);
                 return $data;
             }
