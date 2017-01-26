@@ -43,6 +43,9 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
             $data['name'] = isIsset($formData['name'], 'isStr');
             $data['budget'] = isIsset($formData['budget'], 'toInt');
+            if(!$data['budget']){
+                $valid = false;
+            }
             if ($data['name']) {
                 if (isIsset($formData['country'], 'isArr')) {
                     $data['country'] = [];
